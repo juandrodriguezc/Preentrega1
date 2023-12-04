@@ -1,25 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import NavBarComponent from './components/NavBarComponent/NavBarComponent'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 function App() {
-  const condition= false
-  if (condition) {
-    console.log("hello world");
-   } else{
-      console.log("Hello none");
-    }
+
+
 
   return (
-    <div>
-      {condition ? <h1>Verdadero</h1> : <h1>Falso</h1>
-
-      }
-      <h1>Hello world </h1>
-      <p>show</p>
+    <div style={{ width: '100vh', height: '100vh'}}>
+      <NavBarComponent/>
+      <ItemListContainer greeting='Esta es nuestra lista de productos'/>
     </div>
   );
-    }
+  }
     
     export default App;
