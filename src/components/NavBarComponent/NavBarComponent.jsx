@@ -6,12 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
+import { Link } from 'react-router-dom';
 
 const NavBarComponent = () => {
     return (
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container fluid>
-      <Navbar.Brand href="#">NavBar CoderHouse</Navbar.Brand>
+      <Link to='/'>NavBar CoderHouse</Link>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -20,7 +21,7 @@ const NavBarComponent = () => {
           navbarScroll
         >
           <Nav.Link href="#action1">Inicio</Nav.Link>
-          <Nav.Link href="#action2">Contacto</Nav.Link>
+          <Nav.Link href="#action2">C ontacto</Nav.Link>
           <NavDropdown title="Link" id="navbarScrollingDropdown">
             <NavDropdown.Item href="#action3">Accion</NavDropdown.Item>
             <NavDropdown.Item href="#action4">

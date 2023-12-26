@@ -3,8 +3,9 @@ import { MainRouter } from "../router/MainRouter"
 
 export const Home = () => {
   return (
-    <div>
-    <ItemListContainer greeting='Esta es nuestra lista de productos'/>
+    <div style={{ width: '100vh', height: '100vh'}}>
+      <MainRouter/>
+      <ItemListContainer productsData={productsData}/>
     </div>
-  )
+  );
 }
