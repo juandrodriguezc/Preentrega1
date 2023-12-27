@@ -1,10 +1,9 @@
+import { useParams } from "react-router-dom";
 import ItemListContainer from "../components/ItemListContainer/ItemListContainer"
-import { MainRouter } from "../router/MainRouter"
+import {useGetProductsByCategory } from "../hooks/useProducts"
 
 export const Category = () => {
-  return (
-    <div>
-    <ItemListContainer greeting='Esta es nuestra lista de productos'/>
-    </div>
-  )
-}
+  const  {id} = useParams();
+  const {productsData} = useGetProductsByCategory(id);
+  return <ItemListContainer productsData={productsData}/>;
+};
