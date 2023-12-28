@@ -10,8 +10,9 @@ import { Link } from 'react-router-dom';
 import { useGetCategories } from '../../hooks/useProducts';
 
 
-const NavBarComponent = () => {
+export const NavBarComponent = () => {
 const { categories } = useGetCategories();
+
     return (
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container fluid>
@@ -54,5 +55,3 @@ const { categories } = useGetCategories();
   </Navbar>
 );
 }
-
-export default NavBarComponent

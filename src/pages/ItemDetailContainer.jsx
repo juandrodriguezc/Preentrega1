@@ -16,6 +16,14 @@ export const ItemDetailContainer = () => {
       <Card.Text>
         {productData.description}
       </Card.Text>
+       { 
+       productData.images ? productData.images.map((image) => {
+        return ( 
+          <Card.Img key={index} variant='top' src={image}/>
+        )
+      }) : null
+      }
+    
       <div>
         {productData.price}
       </div>
