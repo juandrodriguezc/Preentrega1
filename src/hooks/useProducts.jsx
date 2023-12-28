@@ -34,7 +34,7 @@ export const useGetProducts = (limit) => {
           const [categories, setCategories] = useState([]); 
       
           useEffect(() => {
-              getProductsByCategory().then(response => {setCategories(response.data)}).catch(error => {console.log(error);});
+              getProductsByCategory(id).then(response => {setCategories(response.data)}).catch(error => {console.log(error);});
             }, [id]);
       
             return {categories}

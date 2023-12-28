@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {Home} from '../pages/Home'
 import  {Category}  from '../pages/Category'
 import  {ItemDetailContainer}  from '../pages/ItemDetailContainer'
-import {NavBarComponent} from '../components/NavBarComponent/NavBarComponent'
+import NavBarComponent from '../components/NavBarComponent/NavBarComponent'
 
 const MainRouter = () => {
   return (

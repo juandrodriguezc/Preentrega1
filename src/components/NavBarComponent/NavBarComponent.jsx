@@ -10,12 +10,12 @@ import { Link } from 'react-router-dom';
 import { useGetCategories } from '../../hooks/useProducts';
 
 
-export const NavBarComponent = () => {
+const NavBarComponent = () => {
 const { categories } = useGetCategories();
 
     return (
     <Navbar expand="lg" className="bg-body-tertiary">
-    <Container fluid>
+    <Container>
       <Link to='/'>NavBar CoderHouse</Link>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
@@ -26,12 +26,14 @@ const { categories } = useGetCategories();
         >
           <Nav.Link href="#action1">Inicio</Nav.Link>
           <Nav.Link href="#action2">Contacto</Nav.Link>
+
           <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-            {categories.map((category, index) => { 
+            {
+            categories.map((category, index) => { 
               return(
             <NavDropdown.Item key={index}>
-              <link key={index} to={`/category/${category}`}>{category}
-              </link>
+              <Link key={index} to={`/category/${category}`}>{category}
+              </Link>
             </NavDropdown.Item>
             );
             })}
@@ -55,3 +57,5 @@ const { categories } = useGetCategories();
   </Navbar>
 );
 }
+
+export default NavBarComponent
