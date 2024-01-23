@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { getCategories, getProducts, getProductsByCategory, getProductById } from "../services";
 
+/**
+ * @description Custom Hook for get products
+ * @returns {Array}
+ */
+
 export const useGetProducts = (limit) => {
     const [productsData, setProductsData] = useState([]); 
 
@@ -10,7 +15,7 @@ export const useGetProducts = (limit) => {
 
       return {productsData}
     }
-    export const useGetProductById = (id) => {
+    export const useGetProductById = (collectionName = "products", id) => {
       const [productData, setProductData] = useState([]); 
   
       useEffect(() => {
@@ -31,11 +36,16 @@ export const useGetProducts = (limit) => {
         }
 
         export const useGetProductsByCategory = (id) => {
-          const [categories, setCategories] = useState([]); 
-      
+          const [productsData, setProductsData] = useState([]); 
+        
           useEffect(() => {
-              getProductsByCategory(id).then(response => {setCategories(response.data)}).catch(error => {console.log(error);});
-            }, [id]);
-      
-            return {categories}
-          }
+            getProductsByCategory(id)
+              .then(response => {
+              console.log(response.data);
+              setProductsData(response.data);
+              })
+              .catch(error => console.log(error));
+          }, [id]);
+        
+          return { productsData };
+        }
