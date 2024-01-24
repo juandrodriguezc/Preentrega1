@@ -16,12 +16,6 @@ export const ItemDetailContainer = () => {
       <Card.Text>
         {productData.description}
       </Card.Text>
-      
-      {/* {productData.images &&
-        productData.images.map((image, index) => (
-          <Card.Img key={index} variant="top" src={image} />
-        ))}
-     */}
       <div>
         {productData.price}
         <ItemCount productId={productData.id} />

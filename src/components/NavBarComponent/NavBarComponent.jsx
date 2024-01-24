@@ -22,8 +22,6 @@ const NavBarComponent = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link as={Link} to="#action1">Inicio</Nav.Link>
-            <Nav.Link as={Link} to="#action2">Contacto</Nav.Link>
 
             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
               {categories.map((category, index) => (
@@ -32,9 +30,6 @@ const NavBarComponent = () => {
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Productos
-            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
