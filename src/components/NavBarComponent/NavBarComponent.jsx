@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-  import Form from "react-bootstrap/Form";
+import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -14,7 +14,7 @@ const NavBarComponent = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Nav.Link as={Link} to="/">NavBar CoderHouse</Nav.Link>
+        <Navbar.Brand as={Link} to="/">NavBar CoderHouse</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -22,15 +22,15 @@ const NavBarComponent = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-
-            <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-              {categories.map((category, index) => (
+            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+              {Array.isArray(categories) && categories.map((category, index) => (
                 <NavDropdown.Item key={index} as={Link} to={`/category/${category}`}>
                   {category}
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
           </Nav>
+
           <Form className="d-flex">
             <Form.Control
               type="search"

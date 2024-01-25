@@ -8,6 +8,7 @@ export const ItemDetailContainer = () => {
 
   const {productData} = useGetProductById("products", id)
   return (
+    <div style={{display: 'flex', justifyContent: 'center'}}>
     <Card key={productData.id} style={{ width: '18rem' }}>           
     <Card.Img variant="top" src={productData.thumbnail} />
     
@@ -22,6 +23,7 @@ export const ItemDetailContainer = () => {
       </div>
     </Card.Body>
   </Card>
+  </div>
 
   )
         }
