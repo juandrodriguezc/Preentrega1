@@ -11,18 +11,14 @@
   },
   "dependencies": {
     "axios": "^1.6.2",
-<<<<<<< HEAD
+
     "bootstrap": "^5.3.3",
     "firebase": "^10.7.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.26.2"
-=======
-    "firebase": "^10.7.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
->>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
+
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { useGetCategories } from "../../hooks/useProducts";
 
 const NavBarComponent = () => {
-<<<<<<< HEAD
   const { categories, loading, error } = useGetCategories();
 
   if (loading) {
@@ -19,9 +18,7 @@ const NavBarComponent = () => {
   if (error) {
     return <p>Error al cargar categorías: {error.message}</p>; // Mostramos un mensaje de error si ocurre
   }
-=======
-  const { categories } = useGetCategories();
->>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
+
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -34,17 +31,12 @@ const NavBarComponent = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-<<<<<<< HEAD
+
             <NavDropdown title="categories" id="basic-nav-dropdown">
               {Array.isArray(categories) && categories.map((category) => (
                 <NavDropdown.Item key={category.id} as={Link} to={`/category/${category.slug}`}>
                   {category.name} {/* Mostrar el nombre de la categoría */}
-=======
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              {Array.isArray(categories) && categories.map((category, index) => (
-                <NavDropdown.Item key={index} as={Link} to={`/category/${category}`}>
-                  {category}
->>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
+
                 </NavDropdown.Item>
               ))}
             </NavDropdown>

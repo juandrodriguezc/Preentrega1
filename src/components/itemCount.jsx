@@ -4,10 +4,6 @@ import { CartContext } from "../Context/CartContext";
 
 const ItemCount = ({ productId }) => {
   const [countItem, setCountItem] = useState(1);
-<<<<<<< HEAD
-=======
-
->>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
   const { count, setCount } = useContext(CartContext);
 
   const handleAdd = () => {
@@ -15,7 +11,7 @@ const ItemCount = ({ productId }) => {
   };
 
   const handleRemove = () => {
-<<<<<<< HEAD
+
     if (countItem > 1) {
       setCountItem(countItem - 1);
     }
@@ -27,17 +23,12 @@ const ItemCount = ({ productId }) => {
       return;
     }
 
-=======
-    setCountItem(countItem - 1);
-  };
 
-  const handleAddProductToCart = () => {
->>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
     const newProduct = {
       id: productId,
       quantity: countItem,
     };
-<<<<<<< HEAD
+
 
     setCount((prevCount) => {
       const existingProductIndex = prevCount.findIndex(item => item.id === productId);
@@ -50,22 +41,7 @@ const ItemCount = ({ productId }) => {
         return [...prevCount, newProduct];
       }
     });
-=======
-    if (count.length === 0) {
-      setCount([newProduct]);
-    } else {
-      count.map((item) => {
-        if (item.id === productId) {
-          return {
-            ...item,
-            quantity: item.quantity + countItem,
-          };
-        } else {
-          setCount([...count, newProduct]);
-        }
-      });
-    }
->>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
+
 
     setCountItem(1);
   };
@@ -90,8 +66,6 @@ const ItemCount = ({ productId }) => {
   );
 };
 
-<<<<<<< HEAD
+
 export default ItemCount;
-=======
-export default ItemCount;
->>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
+
