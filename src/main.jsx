@@ -1,8 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {App} from './App.jsx'
+<<<<<<< HEAD
 import { initializeApp } from "firebase/app"
 import '../public/index.css'
+=======
+import './index.css'
+import { initializeApp } from "firebase/app"
+>>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
 
 
 

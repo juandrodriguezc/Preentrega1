@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import {getProductsByCategory} from "../services";
+<<<<<<< HEAD
 import {collection, getDoc, doc, getDocs,  getFirestore, query, where} from "firebase/firestore";
+=======
+import {collection, getDoc, doc, getDocs,  getFirestore} from "firebase/firestore";
+>>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
 /**
  * @description
  * @returns {Array}
@@ -42,6 +46,7 @@ export const useGetProductById = (collectionName = "products", id) => {
 
 export const useGetCategories = (collectionName = 'categories') => {
   const [categories, setCategories] = useState([]);
+<<<<<<< HEAD
   const [loading, setLoading] = useState(true); // Estado de carga
   const [error, setError] = useState(null); // Estado de error
 
@@ -112,4 +117,40 @@ export const useGetProductsByCategory = (categoryId) => {
   }, [categoryId]);
 
   return { productsData, error, loading };
+=======
+
+  useEffect(() => {
+    const db = getFirestore();
+    const productsCollection = collection(db, collectionName);
+
+    getDocs(productsCollection).then((snapshot) => {
+      const categoriesArray = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
+      if (categoriesArray.length > 0 && categoriesArray[0].categories) {
+        setCategories(categoriesArray[0].categories);
+      } else {
+        console.warn("No 'categories' property found in the documents. Defaulting to an empty array.");
+        setCategories([]);
+      }
+    });
+  }, []);
+
+  return { categories };
+};
+
+export const useGetProductsByCategory = (id) => {
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    getProductsByCategory(id)
+      .then((response) => {
+        setProductsData(response.data.products);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
+
+  return { productsData };
+>>>>>>> cc3f161414698375a8422a3f52e175ce364abbf3
 };
